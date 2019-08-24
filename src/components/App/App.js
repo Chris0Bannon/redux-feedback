@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from "react-router-dom";
+import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
 
 import Review from '../Review/Review';
 import Comments from '../Comments/Comments';
