@@ -4,7 +4,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
-import CssBaseLine from '@material-ui/core';
+import CssBaseLine from '@material-ui/core/CssBaseline';
 
 
 class Home extends Component {
@@ -24,6 +24,7 @@ handleChange = event => {
   render() {
     return (
       <div>
+          <CssBaseLine />
         <h1>Hello From Home</h1>
         <p>
           Welcome to your daily feedback. Never forget that you are here
