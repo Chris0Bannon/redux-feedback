@@ -7,4 +7,4 @@ class Home extends Component {
   }
 }
 
-export default connect()(Comments);
+export default connect()(Home);
