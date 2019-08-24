@@ -10,18 +10,24 @@ import TextField from '@material-ui/core/TextField';
 
 class Comments extends Component {
   state = {
-    comments: 0
+    comments: ''
   };
 
   nextHandler = event => {
     console.log("you clicked the next button");
-
+      this.props.dispatch({
+        type: "ADD_COMMENTS",
+        payload: this.state
+      });
     this.props.history.push("/review");
   };
 
   handleChange = event => {
     console.log("you changed in the form");
     console.log(event.target.value);
+     this.setState({
+       comments: event.target.value
+     });
   };
 
   render() {

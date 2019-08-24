@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import CssBaseLine from "@material-ui/core/CssBaseline";
-
-
 
 class Understanding extends Component {
   state = {
@@ -18,20 +16,20 @@ class Understanding extends Component {
     event.preventDefault();
     console.log("you clicked the next button");
 
-     this.props.dispatch({
-       type: "ADD_UNDERSTANDING",
-       payload: this.state
-     });
-     console.log(this.state);
+    this.props.dispatch({
+      type: "ADD_UNDERSTANDING",
+      payload: this.state
+    });
+    console.log(this.state);
     this.props.history.push("/Supported");
   };
 
   handleChange = event => {
     console.log("you changed in the form");
     console.log(event.target.value);
-     this.setState({
-       understanding: event.target.value
-     });
+    this.setState({
+      understanding: event.target.value
+    });
   };
 
   render() {

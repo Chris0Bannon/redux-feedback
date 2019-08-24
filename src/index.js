@@ -15,9 +15,9 @@ const feedback = (state = [], action) => {
       case "ADD_UNDERSTANDING":
         return [...state, action.payload]
       case "ADD_SUPPORTED":
-        return state;
+        return [...state, action.payload]
       case "ADD_COMMENTS":
-        return state;
+        return [...state, action.payload]
       default:
         return state;
     }
