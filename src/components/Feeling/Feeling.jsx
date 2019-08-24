@@ -20,12 +20,22 @@ class Feeling extends Component {
     event.preventDefault();
     console.log("you clicked the next button");
 
+    this.props.dispatch({
+        type: 'ADD_FEELING',
+        payload: this.state
+    })
+    console.log(this.state);
+    
+
     this.props.history.push("/understanding");
   };
 
   handleChange = event => {
     console.log("you changed in the form");
     console.log(event.target.value);
+    this.setState({
+        feeling: event.target.value
+    })
   };
 
   render() {

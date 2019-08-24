@@ -18,12 +18,20 @@ class Understanding extends Component {
     event.preventDefault();
     console.log("you clicked the next button");
 
+     this.props.dispatch({
+       type: "ADD_UNDERSTANDING",
+       payload: this.state
+     });
+     console.log(this.state);
     this.props.history.push("/Supported");
   };
 
   handleChange = event => {
     console.log("you changed in the form");
     console.log(event.target.value);
+     this.setState({
+       understanding: event.target.value
+     });
   };
 
   render() {
