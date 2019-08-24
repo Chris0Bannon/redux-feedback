@@ -6,7 +6,7 @@ class Home extends Component {
 nextHandler = (event) => {
     console.log('you clicked the next button');
     
-    this.props.history.push('feeling');
+    this.props.history.push("/feeling");
 }
 
 

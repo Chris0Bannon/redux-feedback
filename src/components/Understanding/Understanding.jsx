@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 class Understanding extends Component {
 
 
+    
     render() {
 
             return(
