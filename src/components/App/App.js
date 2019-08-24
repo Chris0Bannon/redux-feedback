@@ -33,9 +33,10 @@ class App extends Component {
         <Router>
           <div className="App">
             <header className="App-header">
-              <h1 className="App-title">Feedback!</h1>
+              <h1 className="App-title">Feedback Hell!</h1>
+              <h4>This is forever!</h4>
               <h4>
-                <i>Don't forget it!</i>
+                Don't forget it!
               </h4>
             </header>
             <br />

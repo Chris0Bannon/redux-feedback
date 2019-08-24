@@ -24,4 +24,10 @@ class Review extends Component {
   }
 }
 
-export default connect()(Review);
+const mapStoreToProps = reduxStore => {
+    return {
+        reduxStore
+    }
+}
+
+export default connect(mapStoreToProps)(Review);

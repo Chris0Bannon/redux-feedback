@@ -9,6 +9,10 @@ import TextField from '@material-ui/core/TextField';
 
 
 class Comments extends Component {
+  state = {
+    comments: 0
+  };
+
   nextHandler = event => {
     console.log("you clicked the next button");
 
@@ -38,7 +42,7 @@ class Comments extends Component {
             defaultValue=""
             margin="normal"
             variant="outlined"
-            onChange = {this.handleChange}
+            onChange={this.handleChange}
           />
           <Button variant="contained" color="primary" type="submit">
             NEXT

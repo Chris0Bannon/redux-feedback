@@ -11,7 +11,12 @@ import CssBaseLine from "@material-ui/core/CssBaseline";
 
 
 class Feeling extends Component {
-  nextHandler = event => {
+  
+  state = {
+      feeling: 0,
+  };
+  
+    nextHandler = event => {
     event.preventDefault();
     console.log("you clicked the next button");
 

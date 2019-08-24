@@ -27,7 +27,7 @@ class Home extends Component {
           forever! Please click the NEXT button to continue!
         </p>
         
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" onClick = {this.nextHandler}>
             NEXT
           </Button>
       </div>

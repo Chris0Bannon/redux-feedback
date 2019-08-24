@@ -10,6 +10,10 @@ import CssBaseLine from "@material-ui/core/CssBaseline";
 
 
 class Supported extends Component {
+  state = {
+    supported: 0
+  };
+
   nextHandler = event => {
     event.preventDefault();
     console.log("you clicked the next button");
