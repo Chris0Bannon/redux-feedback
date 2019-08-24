@@ -1,5 +1,5 @@
-import React, {Component} from 'react':
-import {connection} from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Comments extends Component {
 
