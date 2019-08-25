@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import axios from 'axios';
 
 import Button from '@material-ui/core/Button'
+import CssBaseLine from "@material-ui/core/CssBaseline";
+
 class Review extends Component {
   
     state = {
@@ -35,6 +37,7 @@ class Review extends Component {
 
     return (
       <div>
+        <CssBaseLine />
         <h1>Hello From Review</h1>
         <p>
           Welcome to your daily feedback. You may review and reflect upon
@@ -43,10 +46,22 @@ class Review extends Component {
           submission and your suffering!
         </p>
         <div>
-            <p>you gave yoourself a feeling score of :{this.props.reduxStore.feedback.feeling.feeling}</p>
-            <p>you gave yourself a understanding score of: {this.props.reduxStore.feedback.understanding.understanding}</p>
-            <p>you felt you were suportted this much:{this.props.reduxStore.feedback.supported.supported}</p>
-            <p>and you had this to say for yourself:{this.props.reduxStore.feedback.comments.comments}</p>
+          <p>
+            you gave yoourself a feeling score of :
+            {this.props.reduxStore.feedback.feeling.feeling}
+          </p>
+          <p>
+            you gave yourself a understanding score of:{" "}
+            {this.props.reduxStore.feedback.understanding.understanding}
+          </p>
+          <p>
+            you felt you were suportted this much:
+            {this.props.reduxStore.feedback.supported.supported}
+          </p>
+          <p>
+            and you had this to say for yourself:
+            {this.props.reduxStore.feedback.comments.comments}
+          </p>
         </div>
         <Button
           variant="contained"

@@ -33,11 +33,13 @@ class Comments extends Component {
   render() {
     return (
       <div>
+        <CssBaseLine />
         <h1>Hello From Comments</h1>
         <p>
           Welcome to your daily feedback. Use the text input field below to
-          share any additional comments about your suffering that you may wish
-          to share with your overseers. Please Click the NEXT button to proceed
+          share any additional comments about your suffering that you may
+          wish to share with your overseers. Please Click the NEXT button to
+          proceed
         </p>
         <form onSubmit={this.nextHandler}>
           <TextField
