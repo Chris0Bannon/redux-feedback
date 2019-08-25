@@ -1,17 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from 'axios';
 
 import Button from '@material-ui/core/Button'
 class Review extends Component {
-  nextHandler = event => {
-    console.log("you clicked the next button");
+  
+    state = {
+      feeling: this.props.reduxStore.feedback.feeling.feeling,
+      understanding: this.props.reduxStore.feedback.understanding.understanding,
+      support: this.props.reduxStore.feedback.supported.supported,
+      comments:  this.props.reduxStore.feedback.comments.comments
+  }
+
+    nextHandler = event => {
+    console.log("you clicked the next button", this.state);
+    axios.post('/results', this.state)
+        .then(response => {
+            console.log(response); 
+        })
+        .catch(error => {
+            console.log(error);
+        });
 
     this.props.history.push("/");
   };
 
 
 
+
+
   render() {
+
 
 
     return (
