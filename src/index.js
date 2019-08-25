@@ -11,7 +11,7 @@ import logger from 'redux-logger';
 const feedback = (state = [], action) => {
     switch (action.type) {
       case "ADD_FEELING":
-        return [...state, action.payload]
+        return [... state, action.payload]
       case "ADD_UNDERSTANDING":
         return [...state, action.payload]
       case "ADD_SUPPORTED":
