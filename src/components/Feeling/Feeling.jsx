@@ -89,6 +89,13 @@ class Feeling extends Component {
           <Button variant="contained" color="primary" type="submit">
             NEXT
           </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={this.backHandler}
+          >
+            Back
+          </Button>
         </form>
       </div>
     );

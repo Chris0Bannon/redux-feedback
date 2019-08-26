@@ -86,6 +86,13 @@ class Understanding extends Component {
             NEXT
           </Button>
         </form>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={this.backHandler}
+        >
+          Back
+        </Button>
       </div>
     );
   }
