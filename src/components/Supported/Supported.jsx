@@ -12,23 +12,33 @@ class Supported extends Component {
     supported: 0
   };
 
+  backHandler = event => {
+    event.preventDefault();
+    console.log("clicked back");
+    this.props.history.push("/understanding");
+  };
+
   nextHandler = event => {
     event.preventDefault();
-    console.log("you clicked the next button");
-    this.props.dispatch({
-      type: "ADD_SUPPORTED",
-      payload: this.state
-    });
-    console.log(this.state);
-    this.props.history.push("/comments");
+    if (this.state.supported === 0) {
+      return alert("you gotta tell us a thing");
+    } else {
+      console.log("you clicked the next button");
+      this.props.dispatch({
+        type: "ADD_SUPPORTED",
+        payload: this.state
+      });
+      console.log(this.state);
+      this.props.history.push("/comments");
+    }
   };
 
   handleChange = event => {
     console.log("you changed in the form");
     console.log(event.target.value);
-        this.setState({
-          supported: event.target.value
-        });
+    this.setState({
+      supported: event.target.value
+    });
   };
 
   render() {
@@ -81,17 +91,17 @@ class Supported extends Component {
               onClick={this.handleRadioPickup}
             />
           </RadioGroup>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={this.backHandler}
+          >
+            Back
+          </Button>
           <Button variant="contained" color="primary" type="submit">
             NEXT
           </Button>
         </form>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={this.backHandler}
-        >
-          Back
-        </Button>
       </div>
     );
   }

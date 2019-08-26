@@ -6,45 +6,41 @@ import Button from '@material-ui/core/Button'
 import CssBaseLine from "@material-ui/core/CssBaseline";
 
 class Review extends Component {
-  
-    state = {
-      feeling: this.props.reduxStore.feedback.feeling.feeling,
-      understanding: this.props.reduxStore.feedback.understanding.understanding,
-      support: this.props.reduxStore.feedback.supported.supported,
-      comments:  this.props.reduxStore.feedback.comments.comments
-  }
-
-    nextHandler = event => {
-    console.log("you clicked the next button", this.state);
-    axios.post('/results', this.state)
-        .then(response => {
-            console.log(response); 
-             this.props.history.push("/success");
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
-    
+  state = {
+    feeling: this.props.reduxStore.feedback.feeling.feeling,
+    understanding: this.props.reduxStore.feedback.understanding.understanding,
+    support: this.props.reduxStore.feedback.supported.supported,
+    comments: this.props.reduxStore.feedback.comments.comments
+  };
+  backHandler = event => {
+    event.preventDefault();
+    console.log("clicked back");
+    this.props.history.push("/comments");
   };
 
-
-
-
+  nextHandler = event => {
+    console.log("you clicked the next button", this.state);
+    axios
+      .post("/results", this.state)
+      .then(response => {
+        console.log(response);
+        this.props.history.push("/success");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   render() {
-
-
-
     return (
       <div>
         <CssBaseLine />
         <h1>Hello From Review</h1>
         <p>
-          Welcome to your daily feedback. You may review and reflect upon
-          your feedback entries that are displayed below. Please Click the
-          SUBMIT button to finish your daily feedback> Thank you for you
-          submission and your suffering!
+          Welcome to your daily feedback. You may review and reflect upon your
+          feedback entries that are displayed below. Please Click the SUBMIT
+          button to finish your daily feedback> Thank you for you submission and
+          your suffering!
         </p>
         <div>
           <p>
@@ -66,17 +62,13 @@ class Review extends Component {
         </div>
         <Button
           variant="contained"
-          color="primary"
-          onClick={this.nextHandler}
-        >
-          SUBMIT
-        </Button>
-        <Button
-          variant="contained"
           color="secondary"
           onClick={this.backHandler}
         >
           Back
+        </Button>
+        <Button variant="contained" color="primary" onClick={this.nextHandler}>
+          SUBMIT
         </Button>
       </div>
     );

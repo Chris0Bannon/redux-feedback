@@ -35,13 +35,6 @@ handleNext = () => {
             >
               DO IT AGAIN
             </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={this.backHandler}
-            >
-              Back
-            </Button>
           </div>
         );
     }

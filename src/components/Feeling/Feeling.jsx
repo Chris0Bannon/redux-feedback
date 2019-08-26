@@ -16,8 +16,17 @@ class Feeling extends Component {
       feeling: 0,
   };
   
+    backHandler = event => {
+        event.preventDefault();
+        console.log('clicked back');
+        this.props.history.push('/')        
+    }
+
     nextHandler = event => {
     event.preventDefault();
+    if (this.state.feeling === 0) {
+        return alert('you gotta tell us a thing')
+    }else{
     console.log("you clicked the next button");
 
     this.props.dispatch({
@@ -28,7 +37,7 @@ class Feeling extends Component {
     
 
     this.props.history.push("/understanding");
-  };
+    }};
 
   handleChange = event => {
     console.log("you changed in the form");
@@ -86,15 +95,15 @@ class Feeling extends Component {
               onClick={this.handleRadioPickup}
             />
           </RadioGroup>
-          <Button variant="contained" color="primary" type="submit">
-            NEXT
-          </Button>
           <Button
             variant="contained"
             color="secondary"
             onClick={this.backHandler}
           >
             Back
+          </Button>
+          <Button variant="contained" color="primary" type="submit">
+            NEXT
           </Button>
         </form>
       </div>

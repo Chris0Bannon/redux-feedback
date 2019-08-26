@@ -12,16 +12,26 @@ class Understanding extends Component {
     understanding: 0
   };
 
+  backHandler = event => {
+    event.preventDefault();
+    console.log("clicked back");
+    this.props.history.push("/feeling");
+  };
+
   nextHandler = event => {
     event.preventDefault();
-    console.log("you clicked the next button");
+    if (this.state.understanding === 0) {
+      return alert("you gotta tell us a thing");
+    } else {
+      console.log("you clicked the next button");
 
-    this.props.dispatch({
-      type: "ADD_UNDERSTANDING",
-      payload: this.state
-    });
-    console.log(this.state);
-    this.props.history.push("/Supported");
+      this.props.dispatch({
+        type: "ADD_UNDERSTANDING",
+        payload: this.state
+      });
+      console.log(this.state);
+      this.props.history.push("/Supported");
+    }
   };
 
   handleChange = event => {
@@ -82,17 +92,17 @@ class Understanding extends Component {
               onClick={this.handleRadioPickup}
             />
           </RadioGroup>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={this.backHandler}
+          >
+            Back
+          </Button>
           <Button variant="contained" color="primary" type="submit">
             NEXT
           </Button>
         </form>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={this.backHandler}
-        >
-          Back
-        </Button>
       </div>
     );
   }
