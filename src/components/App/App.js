@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from "react-router-dom";
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
@@ -34,7 +33,7 @@ class App extends Component {
           <div className="App">
             <header className="App-header">
               <h1 className="App-title">Feedback Hell!</h1>
-              <h4>This is forever!</h4>
+              <h2>This is forever!</h2>
               <h4>
                 Don't forget it!
               </h4>

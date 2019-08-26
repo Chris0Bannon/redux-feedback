@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+
 import Button from "@material-ui/core/Button";
 import CssBaseLine from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 
 class Home extends Component {
   nextHandler = event => {
@@ -19,15 +18,22 @@ class Home extends Component {
     return (
       <div>
         <CssBaseLine />
-        <h1>Hello From Home</h1>
-        <p>
-          Welcome to your daily feedback. Please click the NEXT button to
-          begin!
-        </p>
-
-        <Button variant="contained" color="primary" onClick={this.nextHandler}>
-          NEXT
-        </Button>
+        <Grid style={{ textAlign: "center" }}>
+          <h1>Welcome Home!</h1>
+          <p>
+            Welcome to your daily feedback! Follow the prompts to share how you are feeling! The best part is that this feedback loop never ends!Please click the NEXT button to
+            begin!
+          </p>
+        </Grid>
+        <Grid style={{ textAlign: "center" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.nextHandler}
+          >
+            NEXT
+          </Button>
+        </Grid>
       </div>
     );
   }
