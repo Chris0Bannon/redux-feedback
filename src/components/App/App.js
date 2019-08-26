@@ -10,7 +10,7 @@ import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
 import Feeling from '../Feeling/Feeling';
 import Home from '../Home/Home';
-import { red } from '@material-ui/core/colors';
+import Success from '../Success/Success';
 
 const theme = createMuiTheme({
   palette: {
@@ -47,6 +47,7 @@ class App extends Component {
           <Route path="/supported" component={Supported} />
           <Route path="/comments" component={Comments} />
           <Route path="/review" component={Review} />
+          <Route path="/success" component={Success} />
         </Router>
       </MuiThemeProvider>
     );

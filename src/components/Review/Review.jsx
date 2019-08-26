@@ -19,12 +19,13 @@ class Review extends Component {
     axios.post('/results', this.state)
         .then(response => {
             console.log(response); 
+             this.props.history.push("/success");
         })
         .catch(error => {
             console.log(error);
         });
 
-    this.props.history.push("/");
+    
   };
 
 
